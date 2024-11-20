@@ -1,7 +1,7 @@
 # Proprietary Software License Agreement
 
-**Effective Date:** [Insert Date]  
-**Software Name:** [Your Software Tool Name]  
+**Effective Date:** 11/19/2024  
+**Software Name:** Campaign Prioritizer App ("Prioritizer")  
 **Owner:** Strategy Ace LLC 
 
 ---
