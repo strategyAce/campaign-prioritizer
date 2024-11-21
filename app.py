@@ -40,7 +40,7 @@ def main():
         col1,col2 = st.columns(2)
         with col1:
             st.title("Prioritizer Tool")
-            st.subheader("Create a prioritized list of precincts optimized for your campaign's strategy.")
+            st.subheader("Create a precinct list optimized for your campaign's strategy.")
         with col2: 
             st.image(LOGO_PATH, width=250)        
         st.write("This is a product of Strategy Ace LLC")
