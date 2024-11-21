@@ -21,7 +21,7 @@ def main():
         st.session_state.tasks = []
 
     if not st.session_state.logged_in:
-        st.image(BANNER_PATH,use_container_width=False)
+        st.image(BANNER_PATH,use_container_width=True)
         st.image(LOGO_PATH,width=225)
         st.title("Login to Prioritizer App")
 
@@ -36,7 +36,7 @@ def main():
                 st.error("Invalid username or password.")
     else:
         # Display the logo on the main page
-        st.image(BANNER_PATH,use_container_width=False)
+        st.image(BANNER_PATH,use_container_width=True)
         st.image(LOGO_PATH, width=225)
         # If logged in, display the App
         st.title("Prioritizer Tool")
@@ -153,7 +153,7 @@ def main():
                 st.error(f"The CSV file must contain the following columns: {required_columns}")
         else:
             st.info("Please upload or specify a valid CSV file and ensure the weights sum to 1.0.")
-
-        
+            
+st.image(BANNER_PATH,use_container_width=True)   
 if __name__ == "__main__":
     main()
