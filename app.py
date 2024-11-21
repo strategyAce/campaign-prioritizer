@@ -148,7 +148,7 @@ def main():
                 st.metric("Total Party Voters", totalparty)
                 st.divider()
 
-                st.image(BANNER_PATH,width=100)
+                st.image(BANNER_PATH,width=300)
 
             else:
                 st.error(f"The CSV file must contain the following columns: {required_columns}")
