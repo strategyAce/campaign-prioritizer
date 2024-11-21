@@ -8,6 +8,7 @@ from src.utils import authenticate, load_logo
 # Path to assets
 BANNER_PATH = "StratAceBanner_Logo.png"
 LOGO_PATH = "Campaign-Prioritizer_Logo.png"
+url = "https://strategyace.win/"
 
 # Streamlit app
 def main():
@@ -157,6 +158,7 @@ def main():
                 st.divider()
 
                 st.image(BANNER_PATH,width=300)
+                st.write(url)
 
             else:
                 st.error(f"The CSV file must contain the following columns: {required_columns}")
