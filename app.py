@@ -20,7 +20,7 @@ def main():
         st.session_state.tasks = []
 
     if not st.session_state.logged_in:
-        st.image(BANNER_PATH,use_container_width=True)
+        st.image(BANNER_PATH,width=600)
         st.image(LOGO_PATH,width=225)
         st.title("Login to Prioritizer App")
 
