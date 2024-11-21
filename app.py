@@ -154,6 +154,6 @@ def main():
         else:
             st.info("Please upload or specify a valid CSV file and ensure the weights sum to 1.0.")
             
-st.image(BANNER_PATH,use_container_width=True)   
+st.image(BOTTOM_PATH,use_container_width=True)   
 if __name__ == "__main__":
     main()
