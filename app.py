@@ -22,9 +22,12 @@ def main():
     if not st.session_state.logged_in:
         st.image(BANNER_PATH,width=550)
         st.subheader(" ")
-        st.image(LOGO_PATH,width=225)
-        st.title("Login to Prioritizer App")
-
+        col1,col2 = st.columns(2)
+        with col1:
+            st.title("Prioritizer Tool")
+        with col2:
+            st.image(LOGO_PATH,width=225)
+        st.title("Login")
         username = st.text_input("Username")
         password = st.text_input("Password", type="password")
 
