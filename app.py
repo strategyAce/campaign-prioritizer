@@ -8,7 +8,6 @@ from src.utils import authenticate, load_logo
 # Path to assets
 BANNER_PATH = "StratAceBanner_Logo.png"
 LOGO_PATH = "Campaign-Prioritizer_Logo.png"
-BOTTOM_PATH = "StratAceBottom_Logo.png"
 
 # Streamlit app
 def main():
@@ -149,11 +148,12 @@ def main():
                 st.metric("Total Party Voters", totalparty)
                 st.divider()
 
+                st.image(BANNER_PATH,width=100)
+
             else:
                 st.error(f"The CSV file must contain the following columns: {required_columns}")
         else:
             st.info("Please upload or specify a valid CSV file and ensure the weights sum to 1.0.")
-            
-st.image(BOTTOM_PATH,use_container_width=True)   
+             
 if __name__ == "__main__":
     main()
