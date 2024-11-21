@@ -6,6 +6,7 @@ import os
 from src.utils import authenticate, load_logo
 
 # Path to assets
+BANNER_PATH = "StratAce_Banner_Logo.png"
 LOGO_PATH = "Campaign-Prioritizer_Logo.png"
 
 # Streamlit app
@@ -19,6 +20,7 @@ def main():
         st.session_state.tasks = []
 
     if not st.session_state.logged_in:
+        st.image(BANNER_PATH,use_container_width=False)
         st.image(LOGO_PATH,width=225)
         st.title("Login to Prioritizer App")
 
@@ -33,6 +35,7 @@ def main():
                 st.error("Invalid username or password.")
     else:
         # Display the logo on the main page
+        st.image(BANNER_PATH,use_container_width=False)
         st.image(LOGO_PATH, width=225)
         # If logged in, display the App
         st.title("Prioritizer Tool")
