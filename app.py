@@ -20,7 +20,8 @@ def main():
         st.session_state.tasks = []
 
     if not st.session_state.logged_in:
-        st.image(BANNER_PATH,width=600)
+        st.image(BANNER_PATH,width=550)
+        st.subheader(" ")
         st.image(LOGO_PATH,width=225)
         st.title("Login to Prioritizer App")
 
@@ -35,7 +36,7 @@ def main():
                 st.error("Invalid username or password.")
     else:
         # Display the logo on the main page
-        st.image(BANNER_PATH,width=600)
+        st.image(BANNER_PATH,width=550)
         st.subheader(" ")
         col1,col2 = st.columns(2)
         with col1:
