@@ -6,7 +6,7 @@ import os
 from src.utils import authenticate, load_logo
 
 # Path to assets
-LOGO_PATH = Campaign-Prioritizer.png
+LOGO_PATH = Campaign-Prioritizer_Logo.png
 
 # Streamlit app
 def main():
