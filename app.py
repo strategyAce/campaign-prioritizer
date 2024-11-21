@@ -25,6 +25,7 @@ def main():
         col1,col2 = st.columns(2)
         with col1:
             st.title("Prioritizer Tool")
+            st.subheader("Create a precinct list optimized for your campaign's strategy.")
         with col2:
             st.image(LOGO_PATH,width=225)
         st.title("Login")
