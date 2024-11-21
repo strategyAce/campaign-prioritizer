@@ -8,6 +8,7 @@ from src.utils import authenticate, load_logo
 # Path to assets
 BANNER_PATH = "StratAceBanner_Logo.png"
 LOGO_PATH = "Campaign-Prioritizer_Logo.png"
+BOTTOM_PATH = "StratAceBottom_Logo.png"
 
 # Streamlit app
 def main():
