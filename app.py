@@ -36,10 +36,12 @@ def main():
     else:
         # Display the logo on the main page
         st.image(BANNER_PATH,use_container_width=True)
-        st.title("Prioritizer Tool")
-        st.image(LOGO_PATH, width=225)
-        # If logged in, display the App
-        st.subheader("Create a prioritized list of precincts optimized for your campaign's strategy.")
+        col1,col2 = st.columns(2)
+        with col1:
+            st.title("Prioritizer Tool")
+            st.subheader("Create a prioritized list of precincts optimized for your campaign's strategy.")
+        with col2: 
+            st.image(LOGO_PATH, width=225)        
         st.write("This is a product of Strategy Ace LLC")
         st.write("version: BETAv0.1")
         st.divider()
