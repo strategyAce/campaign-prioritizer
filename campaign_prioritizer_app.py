@@ -105,7 +105,7 @@ def main():
         newdf = pd.DataFrame()
         origdf = None
 
-        with st.container(border=true):
+        with st.container(border=True):
             # Select data source
             st.subheader("Select CSV File Source")
             data_source = st.radio("Choose the source of your CSV file:", ["Local file upload", "Google Drive path"])
