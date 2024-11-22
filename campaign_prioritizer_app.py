@@ -100,28 +100,28 @@ def main():
         else:
             st.error("The sum of all weights must equal 1.0. Please adjust.")
         st.divider()
-
-        # Select data source
-        st.subheader("Select CSV File Source")
-        data_source = st.radio("Choose the source of your CSV file:", ["Local file upload", "Google Drive path"])
-
+        
         # Initialize DataFrame
         newdf = pd.DataFrame()
         origdf = None
 
-        if data_source == "Local file upload":
-            # File upload
-            uploaded_file = st.file_uploader("Upload a CSV file", type="csv")
-            if uploaded_file is not None:
-                origdf = pd.read_csv(uploaded_file)
-        elif data_source == "Google Drive path":
-            # Text input for Google Drive file path
-            drive_path = st.text_input("Enter the full path to your CSV file in Google Drive:")
-            if drive_path:
-                if os.path.exists(drive_path):  # Check if the file exists
-                    origdf = pd.read_csv(drive_path)
-                else:
-                    st.error("The specified path does not exist. Please check the path and try again.")
+        with st.container(border=true):
+            # Select data source
+            st.subheader("Select CSV File Source")
+            data_source = st.radio("Choose the source of your CSV file:", ["Local file upload", "Google Drive path"])
+            if data_source == "Local file upload":
+                # File upload
+                uploaded_file = st.file_uploader("Upload a CSV file", type="csv")
+                if uploaded_file is not None:
+                    origdf = pd.read_csv(uploaded_file)
+            elif data_source == "Google Drive path":
+                # Text input for Google Drive file path
+                drive_path = st.text_input("Enter the full path to your CSV file in Google Drive:")
+                if drive_path:
+                    if os.path.exists(drive_path):  # Check if the file exists
+                        origdf = pd.read_csv(drive_path)
+                    else:
+                        st.error("The specified path does not exist. Please check the path and try again.")
 
         # Perform scoring if a valid DataFrame has been loaded and weights sum to 1.0
         if origdf is not None and total_weight == 1.0:
