@@ -59,6 +59,7 @@ def main():
             - The results should be a helful aid to the campaign to determine where to allocate resources and time. 
             - Feel free to experiment and re-run with the different weights to see how much the prioritized list changes. 
             - Its helpful to revisit at different parts of your campaign as factors and strategy may change.
+            """)
             
         # Display the logo on the main page
         st.image(BANNER_PATH,width=550)
