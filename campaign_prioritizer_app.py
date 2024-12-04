@@ -10,15 +10,16 @@ BANNER_PATH = "StratAceBanner_Logo.png"
 LOGO_PATH = "Campaign-Prioritizer_Logo.png"
 url = "https://strategyace.win/"
 
+# Authentication function
+def authenticate(username, password):
+    return username == USERNAME and password == PASSWORD
+
 # Streamlit app
 def main():
 
     # User session for login state
     if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
-
-    if "tasks" not in st.session_state:
-        st.session_state.tasks = []
 
     if not st.session_state.logged_in:
         st.image(BANNER_PATH,width=550)
@@ -32,13 +33,13 @@ def main():
         st.title("Login")
         username = st.text_input("Username")
         password = st.text_input("Password", type="password")
-
+    
         if st.button("Login"):
-            if authenticate(username, password):
-                st.success("Login successful!")
-                st.session_state.logged_in = True
-            else:
-                st.error("Invalid username or password.")
+          if authenticate(username, password):
+              st.session_state.logged_in = True
+              st.experimental_rerun()
+          else:
+              st.error("Invalid username or password.")
     else:
        # Sidebar with expandable User Guide section
         with st.sidebar.title("📘 User Guide / Instructions"):
