@@ -1,8 +1,5 @@
 import streamlit as st
 
-USERNAME = "ClientX"
-PASSWORD = "stratbomb"
-
 def authenticate(username, password):
     """Authenticates a user."""
     return username == USERNAME and password == PASSWORD
