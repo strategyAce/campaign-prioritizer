@@ -164,7 +164,9 @@ def main():
                 )
 
                 # Sort by score in descending order
-                sorted_df = newdf.sort_values(by="Score", ascending=False)
+                sorted_indices = newdf["Score"].sort_values(ascending=False).index
+                sorted_origdf = origdf.loc[sorted_indices]
+                sorted_newdf = newdf.loc[sorted_indices]
 
                 # Display sorted DataFrame
                 st.divider()
@@ -172,9 +174,11 @@ def main():
                 numprecinct = st.number_input("How many Precincts would you like to focus on:", min_value=0, value=5)
         
                 # Dynamically calculate stats for the top numprecinct precincts
-                selected_df = sorted_df.head(numprecinct)
-                PrioritRegNum = selected_df["TOTAL REGISTERED"].sum()
-                totalparty = selected_df["PARTY TOTAL"].sum()
+                selected_origdf = sorted_origdf.head(numprecinct)
+                selected_newdf = sorted_newdf.head(numprecinct)
+        
+                PrioritRegNum = selected_origdf["TOTAL REGISTERED"].sum()
+                totalparty = selected_newdf["PARTY TOTAL"].sum()
         
                 st.subheader(" ")
                 st.write("Here is your full list of precincts in order from highest to lowest score:")
