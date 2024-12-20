@@ -182,7 +182,7 @@ def main():
         
                 st.subheader(" ")
                 st.write("Here is your full list of precincts in order from highest to lowest score:")
-                st.write(selected_df)
+                st.write(selected_newdf)
                 st.write(f"Here are the stats for the top {numprecinct} Precincts:")
                 st.metric("Total Registered Voters", PrioritRegNum)
                 st.metric("Total Party Voters", totalparty)
