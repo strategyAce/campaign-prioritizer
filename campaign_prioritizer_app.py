@@ -109,8 +109,8 @@ def main():
 
         with st.container(border=True):
             # Select data source
-            st.subheader("Select CSV File Source")
-            data_source = st.radio("Choose the source of your CSV file:", ["Local file upload", "Google Drive path"])
+            st.subheader("Select Your Precinct Data File")
+            data_source = st.radio("Choose the source of your CSV data file:", ["Local file upload", "Google Drive path"])
             if data_source == "Local file upload":
                 # File upload
                 uploaded_file = st.file_uploader("Upload a CSV file", type="csv")
@@ -118,7 +118,7 @@ def main():
                     origdf = pd.read_csv(uploaded_file)
             elif data_source == "Google Drive path":
                 # Text input for Google Drive file path
-                drive_path = st.text_input("Enter the full path to your CSV file in Google Drive:")
+                drive_path = st.text_input("Enter the full path to your CSV data file in Google Drive:")
                 if drive_path:
                     if os.path.exists(drive_path):  # Check if the file exists
                         origdf = pd.read_csv(drive_path)
