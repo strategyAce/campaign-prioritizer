@@ -169,15 +169,20 @@ def main():
                 # Display sorted DataFrame
                 st.divider()
                 st.header("Prioritized Precincts List")
-                numprecinct = st.number_input("How many Precincts would you like to focus on:",min_value=0, value=5)
+                numprecinct = st.number_input("How many Precincts would you like to focus on:", min_value=0, value=5)
+        
+                # Dynamically calculate stats for the top numprecinct precincts
+                selected_df = sorted_df.head(numprecinct)
+                PrioritRegNum = selected_df["TOTAL REGISTERED"].sum()
+                totalparty = selected_df["PARTY TOTAL"].sum()
+        
                 st.subheader(" ")
                 st.write("Here is your full list of precincts in order from highest to lowest score:")
                 st.write(sorted_df)
                 st.write(f"Here are the stats for the top {numprecinct} Precincts:")
-                PrioritRegNum = origdf["TOTAL REGISTERED"].head(numprecinct).sum()
-                totalparty = newdf["PARTY TOTAL"].head(numprecinct).sum()
                 st.metric("Total Registered Voters", PrioritRegNum)
                 st.metric("Total Party Voters", totalparty)
+                st.divider()
                 st.divider()
 
                 st.image(BANNER_PATH,width=300)
