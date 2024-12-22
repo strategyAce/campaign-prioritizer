@@ -134,7 +134,8 @@ def main():
             required_columns = ["PRECINCT", "TOTAL REGISTERED", "PCT DEM", "PCT REP", "PCT NPA", "PCT OTHER", "DEM TURNOUT", "REP TURNOUT", "NPA TURNOUT"]
             score_columns = ["TOTAL REGISTERED", "PCT DEM", "PCT REP", "PCT NPA", "PCT OTHER", "DEM TURNOUT", "REP TURNOUT", "NPA TURNOUT"]
             if all(col in origdf.columns for col in required_columns):
-
+                newdf['PRECINCT'] = origdf['PRECINCT']
+                
                 # Normalize each parameter column to a range of 0-1
                 scaler = MinMaxScaler()
 
@@ -165,7 +166,7 @@ def main():
                     swing_voters_weight * newdf["PCT NPA"] +
                     party_turnout_weight * newdf[turnout_column]
                 )
-                newdf['PRECINCT'] = origdf['PRECINCT']
+                
 
                 # Sort by score in descending order
                 sorted_indices = newdf["Score"].sort_values(ascending=False).index
