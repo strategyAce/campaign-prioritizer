@@ -97,12 +97,9 @@ def main():
         st.subheader(f"Current Total Weight: {total_weight:.2f}")
         if total_weight != 0.0 and total_weight != 1.0:
             st.warning("The sum of all weights must equal 1.0. Please adjust.")
-            st.write('jared')
         elif total_weight == 1.0:
-            st.write('goodness')
             st.success("The sum of all weights is 1.0.")
         else:
-            st.write('what the hey')
             st.error("The sum of all weights must equal 1.0. Please adjust.")
         st.divider()
         
