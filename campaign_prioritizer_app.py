@@ -162,6 +162,7 @@ def main():
                     swing_voters_weight * newdf["PCT NPA"] +
                     party_turnout_weight * newdf[turnout_column]
                 )
+                newdf['PRECINCT'] = origdf['PRECINCT']
 
                 # Sort by score in descending order
                 sorted_indices = newdf["Score"].sort_values(ascending=False).index
